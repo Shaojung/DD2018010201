@@ -14,7 +14,16 @@ public class MainActivity extends AppCompatActivity {
     }
     public void click1(View v)
     {
-        Toast.makeText(MainActivity.this, "Test1", Toast.LENGTH_SHORT).show();
+        switch(v.getId())
+        {
+            case R.id.button:
+                Toast.makeText(MainActivity.this, "Test1", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button2:
+                Toast.makeText(MainActivity.this, "Test2", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
     }
 
 }
