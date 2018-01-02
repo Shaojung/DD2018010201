@@ -6,19 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn3 = (Button) findViewById(R.id.button3);
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Test3", Toast.LENGTH_SHORT).show();
-            }
-        });
+        btn3.setOnClickListener(this);
     }
     public void click1(View v)
     {
@@ -33,4 +28,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId())
+        {
+            case R.id.button3:
+                Toast.makeText(MainActivity.this, "Test3", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+    }
 }
