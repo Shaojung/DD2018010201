@@ -21,7 +21,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "切換", Toast.LENGTH_SHORT).show();
+                if (tb.isChecked())
+                {
+                    Toast.makeText(MainActivity.this, "目前開啟中", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this, "目前關閉中", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }
@@ -47,5 +55,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
+    }
+    public void clickCheck(View v)
+    {
+        if (tb.isChecked())
+        {
+            Toast.makeText(MainActivity.this, "目前開啟中", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(MainActivity.this, "目前關閉中", Toast.LENGTH_SHORT).show();
+        }
     }
 }
