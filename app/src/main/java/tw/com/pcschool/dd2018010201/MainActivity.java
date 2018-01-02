@@ -5,15 +5,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.widget.ToggleButton;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn3;
+    ToggleButton tb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn3 = (Button) findViewById(R.id.button3);
         btn3.setOnClickListener(this);
+        tb = (ToggleButton) findViewById(R.id.toggleButton);
+        tb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "切換", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     public void click1(View v)
     {
