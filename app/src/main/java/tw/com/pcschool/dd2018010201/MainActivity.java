@@ -13,8 +13,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn3 = (Button) findViewById(R.id.button3);
-        MyListener listener = new MyListener();
-        btn3.setOnClickListener(listener);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Test3", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     public void click1(View v)
     {
@@ -29,11 +33,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    class MyListener implements View.OnClickListener
-    {
-        @Override
-        public void onClick(View view) {
-            Toast.makeText(MainActivity.this, "Test3", Toast.LENGTH_SHORT).show();
-        }
-    }
 }
